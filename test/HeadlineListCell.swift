@@ -25,15 +25,13 @@ class HeadlineListCell: UITableViewCell {
     }
     
     private func createUI() {
-        contentView.addSubview(titleLabel)
-        titleLabel.snp.makeConstraints { (m) in
+        titleLabel.beAddInto(contentView).snp.makeConstraints { (m) in
             m.top.equalToSuperview().offset(8)
             m.left.equalToSuperview().offset(12)
             m.right.equalToSuperview().offset(-12)
         }
         
-        contentView.addSubview(authorLabel)
-        authorLabel.snp.makeConstraints { (m) in
+        authorLabel.beAddInto(contentView).snp.makeConstraints { (m) in
             m.bottom.equalToSuperview().offset(-8)
             m.left.equalToSuperview().offset(12)
         }
