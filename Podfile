@@ -9,7 +9,6 @@ def pods
     pod 'Alamofire'#网络请求
     pod 'SnapKit'#约束布局
     pod 'Kingfisher'#图片缓存
-    pod 'FSPagerView'#轮播图
     pod 'EmptyDataSet-Swift'#空界面
 
     #Objective-C
