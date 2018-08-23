@@ -15,6 +15,7 @@ def pods
 
     pod 'MJRefresh'#上下拉刷新
     pod 'SVProgressHUD'#透明指示层
+    pod 'RealReachability'#网络状态监测
 
 end
 
