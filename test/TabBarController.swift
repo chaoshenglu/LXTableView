@@ -13,7 +13,7 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        let titleArray = ["工业头条","技术问答","物性表","我"]
+        let titleArray = ["头条新闻","头条新闻","头条新闻","头条新闻"]
         
         var normalImagesArray = [UIImage]()
         var selectedImagesArray = [UIImage]()

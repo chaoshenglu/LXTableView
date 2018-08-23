@@ -12,7 +12,7 @@ class ExampleTableViewController: LXTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "工业头条"
+        title = "头条新闻"
         tableView.estimatedRowHeight = 90
         tableView.mj_header = MJDIYHeader(refreshingTarget:self,refreshingAction:#selector(refreshData))
         tableView.mj_footer = MJDIYAutoFooter(refreshingTarget:self,refreshingAction:#selector(loadMoreData))
