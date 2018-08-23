@@ -200,7 +200,21 @@ class NetworkTool:NSObject {
         printJson(log:line_begin+url+par+line_center+res+line_end, uri:uri)
     }
 
-
+    //m=1&page=1&size=20
+    class func requestExampleData(param:[String:Any],finishedCallback:@escaping (_ models:[ExampleModel])->()) {
+        let uri = "news"
+        NetworkTool.get(uri:uri, param:param) { (res) in
+            if let res = res as? NSDictionary {
+                let dic = res["pages"] as? NSDictionary
+                let dataArr = dic?["items"] as? NSArray
+                if let models = dataArr?.lx_modelArr([ExampleModel].self){
+                    finishedCallback(models)
+                    return
+                }
+            }
+            finishedCallback([ExampleModel]())
+        }
+    }
 }
 
 

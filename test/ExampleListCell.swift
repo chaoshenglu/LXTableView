@@ -1,5 +1,5 @@
 //
-//  HeadlineListCell.swift
+//  ExampleListCell.swift
 //  suzao
 //
 //  Created by lixiang on 2018/5/18.
@@ -9,17 +9,17 @@
 import UIKit
 import SnapKit
 
-class HeadlineListCell: UITableViewCell {
+class ExampleListCell: UITableViewCell {
     
     private let titleLabel = UILabel(fontSize:17)
     private let authorLabel = UILabel(fontSize: 12,textColor:labelLightGray)
     private let line = UIView(bgColor:lineGray)
     
-    class func cell(tableView:UITableView) -> HeadlineListCell {
+    class func cell(tableView:UITableView) -> ExampleListCell {
         let reuseId = NSStringFromClass(self)
-        var cell = tableView.dequeueReusableCell(withIdentifier:reuseId) as? HeadlineListCell
+        var cell = tableView.dequeueReusableCell(withIdentifier:reuseId) as? ExampleListCell
         if cell == nil {
-            cell = HeadlineListCell(style:.default,reuseIdentifier:reuseId)
+            cell = ExampleListCell(style:.default,reuseIdentifier:reuseId)
             cell!.createUI()
         }
         return cell!
@@ -43,7 +43,7 @@ class HeadlineListCell: UITableViewCell {
         }
     }
     
-    func config(model:HeadlineListModel) {
+    func config(model:ExampleModel) {
         titleLabel.text = model.title
         authorLabel.text = model.author
     }

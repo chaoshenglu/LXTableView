@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7EC001FA84CB83C94C664CEA /* Pods_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BA6268FE09CBD325DB62016 /* Pods_test.framework */; };
-		C93E6B4321290FD400A56E12 /* HeadlineListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E6B4221290FD300A56E12 /* HeadlineListModel.swift */; };
+		C93E6B4321290FD400A56E12 /* ExampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E6B4221290FD300A56E12 /* ExampleModel.swift */; };
 		C93E6B4621291B9600A56E12 /* JsonHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C93E6B4421291B9600A56E12 /* JsonHelper.m */; };
-		C93E6B4821291BFC00A56E12 /* HeadlineListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E6B4721291BFC00A56E12 /* HeadlineListCell.swift */; };
+		C93E6B4821291BFC00A56E12 /* ExampleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E6B4721291BFC00A56E12 /* ExampleListCell.swift */; };
 		C93EC85F212A96F800738BC0 /* UIView+ShortCut.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93EC85E212A96F800738BC0 /* UIView+ShortCut.swift */; };
 		C9457A772128206400E08D9A /* LXTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9457A722128206400E08D9A /* LXTableViewController.swift */; };
 		C9457A782128206400E08D9A /* ThemeRedNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9457A732128206400E08D9A /* ThemeRedNavController.swift */; };
@@ -30,10 +30,10 @@
 /* Begin PBXFileReference section */
 		2BA6268FE09CBD325DB62016 /* Pods_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45D692C1ED0A0B591CA76F93 /* Pods-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.release.xcconfig"; sourceTree = "<group>"; };
-		C93E6B4221290FD300A56E12 /* HeadlineListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadlineListModel.swift; sourceTree = "<group>"; };
+		C93E6B4221290FD300A56E12 /* ExampleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleModel.swift; sourceTree = "<group>"; };
 		C93E6B4421291B9600A56E12 /* JsonHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonHelper.m; sourceTree = "<group>"; };
 		C93E6B4521291B9600A56E12 /* JsonHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonHelper.h; sourceTree = "<group>"; };
-		C93E6B4721291BFC00A56E12 /* HeadlineListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadlineListCell.swift; sourceTree = "<group>"; };
+		C93E6B4721291BFC00A56E12 /* ExampleListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleListCell.swift; sourceTree = "<group>"; };
 		C93EC85E212A96F800738BC0 /* UIView+ShortCut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ShortCut.swift"; sourceTree = "<group>"; };
 		C9457A722128206400E08D9A /* LXTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXTableViewController.swift; sourceTree = "<group>"; };
 		C9457A732128206400E08D9A /* ThemeRedNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeRedNavController.swift; sourceTree = "<group>"; };
@@ -106,23 +106,23 @@
 		C9540C3120E4E3B800146515 /* test */ = {
 			isa = PBXGroup;
 			children = (
+				C9457A902128242700E08D9A /* ExampleTableViewController.swift */,
+				C93E6B4721291BFC00A56E12 /* ExampleListCell.swift */,
+				C93E6B4221290FD300A56E12 /* ExampleModel.swift */,
+				C93EC85E212A96F800738BC0 /* UIView+ShortCut.swift */,
+				C9457A8C2128240B00E08D9A /* LXCommonTools.swift */,
+				C9457A8D2128240B00E08D9A /* LXNetworkTool.swift */,
+				C9457A762128206400E08D9A /* BaseTableViewController.swift */,
+				C9457A742128206400E08D9A /* BaseViewController.swift */,
+				C9457A722128206400E08D9A /* LXTableViewController.swift */,
+				C9457A752128206400E08D9A /* TabBarController.swift */,
+				C9457A732128206400E08D9A /* ThemeRedNavController.swift */,
 				C93E6B4521291B9600A56E12 /* JsonHelper.h */,
 				C93E6B4421291B9600A56E12 /* JsonHelper.m */,
 				C9457A82212820C100E08D9A /* MJDIYAutoFooter.h */,
 				C9457A84212820C100E08D9A /* MJDIYAutoFooter.m */,
 				C9457A85212820C100E08D9A /* MJDIYHeader.h */,
 				C9457A83212820C100E08D9A /* MJDIYHeader.m */,
-				C93EC85E212A96F800738BC0 /* UIView+ShortCut.swift */,
-				C9457A8C2128240B00E08D9A /* LXCommonTools.swift */,
-				C9457A8D2128240B00E08D9A /* LXNetworkTool.swift */,
-				C9457A762128206400E08D9A /* BaseTableViewController.swift */,
-				C9457A742128206400E08D9A /* BaseViewController.swift */,
-				C93E6B4721291BFC00A56E12 /* HeadlineListCell.swift */,
-				C93E6B4221290FD300A56E12 /* HeadlineListModel.swift */,
-				C9457A902128242700E08D9A /* ExampleTableViewController.swift */,
-				C9457A722128206400E08D9A /* LXTableViewController.swift */,
-				C9457A752128206400E08D9A /* TabBarController.swift */,
-				C9457A732128206400E08D9A /* ThemeRedNavController.swift */,
 				C9540C3220E4E3B800146515 /* AppDelegate.swift */,
 				C9457A7C2128206D00E08D9A /* useAsPch.swift */,
 				C9540C3920E4E3BA00146515 /* Assets.xcassets */,
@@ -258,7 +258,7 @@
 				C93EC85F212A96F800738BC0 /* UIView+ShortCut.swift in Sources */,
 				C9457A86212820C100E08D9A /* MJDIYHeader.m in Sources */,
 				C9457A792128206400E08D9A /* BaseViewController.swift in Sources */,
-				C93E6B4321290FD400A56E12 /* HeadlineListModel.swift in Sources */,
+				C93E6B4321290FD400A56E12 /* ExampleModel.swift in Sources */,
 				C9457A782128206400E08D9A /* ThemeRedNavController.swift in Sources */,
 				C9457A7B2128206400E08D9A /* BaseTableViewController.swift in Sources */,
 				C9457A7A2128206400E08D9A /* TabBarController.swift in Sources */,
@@ -267,7 +267,7 @@
 				C9457A87212820C100E08D9A /* MJDIYAutoFooter.m in Sources */,
 				C93E6B4621291B9600A56E12 /* JsonHelper.m in Sources */,
 				C9457A7D2128206D00E08D9A /* useAsPch.swift in Sources */,
-				C93E6B4821291BFC00A56E12 /* HeadlineListCell.swift in Sources */,
+				C93E6B4821291BFC00A56E12 /* ExampleListCell.swift in Sources */,
 				C9457A912128242700E08D9A /* ExampleTableViewController.swift in Sources */,
 				C9457A772128206400E08D9A /* LXTableViewController.swift in Sources */,
 				C9540C3320E4E3B800146515 /* AppDelegate.swift in Sources */,

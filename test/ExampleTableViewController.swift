@@ -21,7 +21,7 @@ class ExampleTableViewController: LXTableViewController {
     
     @objc private func loadMoreData() {
         let param = ["page":page,"size":10]
-        NetworkHeadlineTool.requestHeadlineList(param:param) {[weak self](models) in
+        NetworkTool.requestExampleData(param:param) {[weak self](models) in
             self?.configWithHeaderAndFooter(models:NSMutableArray(array:models))
         }
     }
@@ -40,8 +40,8 @@ class ExampleTableViewController: LXTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = HeadlineListCell.cell(tableView: tableView)
-        let model = self.modelArr[indexPath.row] as! HeadlineListModel
+        let cell = ExampleListCell.cell(tableView: tableView)
+        let model = self.modelArr[indexPath.row] as! ExampleModel
         cell.config(model:model)
         return cell
     }
