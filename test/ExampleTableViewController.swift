@@ -13,7 +13,7 @@ class ExampleTableViewController: LXTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "工业头条"
-        tableView.estimatedRowHeight = 80
+        tableView.estimatedRowHeight = 90
         tableView.mj_header = MJDIYHeader(refreshingTarget:self,refreshingAction:#selector(refreshData))
         tableView.mj_footer = MJDIYAutoFooter(refreshingTarget:self,refreshingAction:#selector(loadMoreData))
         refreshData()
@@ -36,7 +36,7 @@ class ExampleTableViewController: LXTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 90
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -44,6 +44,12 @@ class ExampleTableViewController: LXTableViewController {
         let model = self.modelArr[indexPath.row] as! HeadlineListModel
         cell.config(model:model)
         return cell
+    }
+    
+    override func emptyDataSet(_ scrollView: UIScrollView, didTapButton button: UIButton) {
+        didFinishRequest = false
+        tableView.reloadData()
+        refreshData()
     }
     
 }
