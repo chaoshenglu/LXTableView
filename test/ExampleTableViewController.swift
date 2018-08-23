@@ -14,21 +14,21 @@ class ExampleTableViewController: LXTableViewController {
         super.viewDidLoad()
         title = "工业头条"
         tableView.estimatedRowHeight = 80
-        tableView.mj_header = MJDIYHeader(refreshingTarget:self,refreshingAction:#selector(clearAndRefreshData))
-        tableView.mj_footer = MJDIYAutoFooter(refreshingTarget:self,refreshingAction:#selector(requestListData))
-        requestListData()
+        tableView.mj_header = MJDIYHeader(refreshingTarget:self,refreshingAction:#selector(refreshData))
+        tableView.mj_footer = MJDIYAutoFooter(refreshingTarget:self,refreshingAction:#selector(loadMoreData))
+        refreshData()
     }
     
-    @objc private func requestListData() {
+    @objc private func loadMoreData() {
         let param = ["page":page,"size":10]
         NetworkHeadlineTool.requestHeadlineList(param:param) {[weak self](models) in
             self?.configWithHeaderAndFooter(models:NSMutableArray(array:models))
         }
     }
     
-    @objc private func clearAndRefreshData() {
+    @objc private func refreshData() {
         page = 1
-        requestListData()
+        loadMoreData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

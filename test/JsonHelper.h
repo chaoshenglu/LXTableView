@@ -10,8 +10,6 @@
 
 @interface JsonHelper : NSObject
 
-+ (NSString *)findVarWithDic:(NSDictionary *)dic;
-
 + (id)removeNull:(id)dicOrArr;
 
 @end
