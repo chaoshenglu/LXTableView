@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = TabBarController()
         window?.makeKeyAndVisible()
         initRealReachability()
+        SVProgressHUD.setMaximumDismissTimeInterval(0.8)
         return true
     }
 
@@ -56,4 +57,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 }
+
+
 
