@@ -10,6 +10,7 @@ def pods
     pod 'SnapKit'#约束布局
     pod 'Kingfisher'#图片缓存
     pod 'EmptyDataSet-Swift'#空界面
+    pod 'SwiftyJSON'#json处理
 
     #Objective-C
 

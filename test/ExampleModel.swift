@@ -15,11 +15,6 @@ class ExampleModel:NSObject,Codable {
     var title : String?
     /// 新闻封面
     var cover : String?
-    /// 新闻封面数组
-    lazy var coverArr : [String] = {
-        let arr = (cover ?? "").components(separatedBy:";")
-        return arr
-    }()
     /// 发布时间
     var create_at : String?
     /// 浏览量

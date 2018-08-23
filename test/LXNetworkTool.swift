@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 var theBaseUrl : String?
 
@@ -200,12 +201,10 @@ class NetworkTool:NSObject {
         printJson(log:line_begin+url+par+line_center+res+line_end, uri:uri)
     }
 
-    class func dic_vars(dic:NSDictionary) -> String {
+    class func dic_vars(_ dic:[String:Any]) -> String {
         var str = "\n"
-        for key in dic.allKeys {
-            let keystr = key as! String
-            let value = dic[keystr]
-            
+        for key in dic.keys {
+            let value = dic[key]
             if value is String {
                 str.append("///\n")
                 str.append("var \(key) : String?\n")
@@ -233,6 +232,19 @@ class NetworkTool:NSObject {
         let uri = "news"
         NetworkTool.get(uri:uri, param:param) { (res) in
             if let res = res as? NSDictionary {
+                
+                //┌────────────────────────────────打印模型变量────────────────────────────────┐
+                
+                if let dictionary = JSON(res)["pages"]["items"].array?.first?.dictionaryObject {
+                    let str = NetworkTool.dic_vars(dictionary)
+                    printLog("================================================")
+                    printLog(str)
+                    printLog("================================================")
+                }
+                
+                //└────────────────────────────────打印模型变量────────────────────────────────┘
+                
+                
                 let dic = res["pages"] as? NSDictionary
                 let dataArr = dic?["items"] as? NSArray
                 if let models = dataArr?.lx_modelArr([ExampleModel].self){
