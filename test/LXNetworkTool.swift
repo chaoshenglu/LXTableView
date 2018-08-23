@@ -200,7 +200,35 @@ class NetworkTool:NSObject {
         printJson(log:line_begin+url+par+line_center+res+line_end, uri:uri)
     }
 
-    //m=1&page=1&size=20
+    class func dic_vars(dic:NSDictionary) -> String {
+        var str = "\n"
+        for key in dic.allKeys {
+            let keystr = key as! String
+            let value = dic[keystr]
+            
+            if value is String {
+                str.append("///\n")
+                str.append("var \(key) : String?\n")
+            }else if value is Int {
+                str.append("///\n")
+                str.append("var \(key) : Int?\n")
+            }else if value is Double {
+                str.append("///\n")
+                str.append("var \(key) : Double?\n")
+            }else if value is [String:Any] {
+                str.append("///\n")
+                str.append("var \(key) : [String:Any]?\n")
+            }else if value is [Any] {
+                str.append("///\n")
+                str.append("var \(key) : [Any]?\n")
+            }else {
+                str.append("///\n")
+                str.append("var \(key) : UNKNOWN?\n")
+            }
+        }
+        return str
+    }
+    
     class func requestExampleData(param:[String:Any],finishedCallback:@escaping (_ models:[ExampleModel])->()) {
         let uri = "news"
         NetworkTool.get(uri:uri, param:param) { (res) in
