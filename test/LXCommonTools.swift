@@ -485,6 +485,21 @@ enum Validate {
     }
 }
 
+extension UIImage {
+    
+    class func imageWith(view:UIView) -> UIImage? {
+        let rate = UIScreen.main.scale
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, true, (view.layer.contentsScale) * rate)
+        if let aContext = UIGraphicsGetCurrentContext() {
+            view.layer.render(in: aContext)
+        }
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
+    
+}
+
 class IntervalItem: UIBarButtonItem {
     
     private var intervalItemBtn : IntervalBtn?
