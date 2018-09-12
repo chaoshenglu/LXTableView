@@ -10,10 +10,9 @@ def pods
     pod 'Kingfisher'#图片缓存
     pod 'EmptyDataSet-Swift'#空界面
     pod 'SwiftyJSON'#json处理
+    pod 'ESPullToRefresh'#上下拉刷新
 
     #Objective-C
-
-    pod 'MJRefresh'#上下拉刷新
     pod 'SVProgressHUD'#透明指示层
     pod 'RealReachability'#网络状态监测
 

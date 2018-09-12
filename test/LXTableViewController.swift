@@ -8,6 +8,7 @@
 
 import UIKit
 import EmptyDataSet_Swift
+import ESPullToRefresh
 
 class LXTableViewController:BaseTableViewController,EmptyDataSetSource,EmptyDataSetDelegate {
     
@@ -39,15 +40,15 @@ class LXTableViewController:BaseTableViewController,EmptyDataSetSource,EmptyData
             modelArr.removeAllObjects()
             modelArr.addObjects(from:models as! [Any])
             tableView.reloadData()
-            tableView.mj_header?.endRefreshing()
-            tableView.mj_footer.resetNoMoreData()
+            tableView.es.stopPullToRefresh()
         }else{
             modelArr.addObjects(from:models as! [Any])
             tableView.reloadData()
             if models.count == 0 && modelArr.count != 0 {
-                tableView.mj_footer?.endRefreshingWithNoMoreData()
+                tableView.es.stopLoadingMore()
+                tableView.es.noticeNoMoreData()
             }else{
-                tableView.mj_footer?.endRefreshing()
+                tableView.es.stopLoadingMore()
             }
         }
         page = page+1
@@ -58,7 +59,7 @@ class LXTableViewController:BaseTableViewController,EmptyDataSetSource,EmptyData
         modelArr.removeAllObjects()
         modelArr.addObjects(from: models as! [Any])
         tableView.reloadData()
-        tableView.mj_header?.endRefreshing()
+        tableView.es.stopPullToRefresh()
     }
     
     func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {

@@ -14,8 +14,12 @@ class ExampleTableViewController: LXTableViewController {
         super.viewDidLoad()
         title = "头条新闻"
         tableView.estimatedRowHeight = 90
-        tableView.mj_header = MJDIYHeader(refreshingTarget:self,refreshingAction:#selector(refreshData))
-        tableView.mj_footer = MJDIYAutoFooter(refreshingTarget:self,refreshingAction:#selector(loadMoreData))
+        tableView.es.addPullToRefresh {
+            self.refreshData()
+        }
+        tableView.es.addInfiniteScrolling {
+            self.loadMoreData()
+        }
         refreshData()
     }
     
