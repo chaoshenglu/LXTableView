@@ -34,7 +34,8 @@ class LXTableViewController:BaseTableViewController,EmptyDataSetSource,EmptyData
         tableView.emptyDataSetDelegate = self
     }
     
-    func configWithHeaderAndFooter(models:NSMutableArray){
+    ///page=1时刷新，page>1时加载更多
+    func configWithModels(models:NSMutableArray){
         didFinishRequest = true
         if page == 1 {
             modelArr.removeAllObjects()
@@ -52,14 +53,6 @@ class LXTableViewController:BaseTableViewController,EmptyDataSetSource,EmptyData
             }
         }
         page = page+1
-    }
-    
-    func configWithHeader(models:NSMutableArray){
-        didFinishRequest = true
-        modelArr.removeAllObjects()
-        modelArr.addObjects(from: models as! [Any])
-        tableView.reloadData()
-        tableView.es.stopPullToRefresh()
     }
     
     func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
@@ -105,6 +98,38 @@ class LXTableViewController:BaseTableViewController,EmptyDataSetSource,EmptyData
         //在需要的时候，由子类重写此方法
     }
     
+    //┌────────────────────────────────────────────────────────────────┐
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    //└────────────────────────────────────────────────────────────────┘
+    
+    /* 如何不显示sectionFooter？
+     
+     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+     if #available(iOS 11.0, *) {
+     //高于 iOS 11.0
+     return 0
+     } else {
+     //低于 iOS 11.0
+     return 0.01
+     }
+     }
+     
+     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+     return nil
+     }
+     
+     */
 }
 
 
