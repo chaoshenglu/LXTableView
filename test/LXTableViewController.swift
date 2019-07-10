@@ -39,7 +39,7 @@ class LXTableViewController:BaseTableViewController,EmptyDataSetSource,EmptyData
         didFinishRequest = true
         if page == 1 {
             modelArr.removeAll()
-            modelArr.append(models)
+            modelArr = modelArr + models
             tableView.reloadData()
             tableView.es.stopPullToRefresh()
         }else{
