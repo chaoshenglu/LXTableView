@@ -100,6 +100,7 @@
 		C9540C3120E4E3B800146515 /* test */ = {
 			isa = PBXGroup;
 			children = (
+				C9457A722128206400E08D9A /* LXTableViewController.swift */,
 				C9457A902128242700E08D9A /* ExampleTableViewController.swift */,
 				C93E6B4721291BFC00A56E12 /* ExampleListCell.swift */,
 				C93E6B4221290FD300A56E12 /* ExampleModel.swift */,
@@ -108,7 +109,6 @@
 				C9457A8D2128240B00E08D9A /* LXNetworkTool.swift */,
 				C9457A762128206400E08D9A /* BaseTableViewController.swift */,
 				C9457A742128206400E08D9A /* BaseViewController.swift */,
-				C9457A722128206400E08D9A /* LXTableViewController.swift */,
 				C9457A752128206400E08D9A /* TabBarController.swift */,
 				C9457A732128206400E08D9A /* ThemeRedNavController.swift */,
 				C93E6B4521291B9600A56E12 /* JsonHelper.h */,

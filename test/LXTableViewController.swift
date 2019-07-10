@@ -13,7 +13,7 @@ import ESPullToRefresh
 class LXTableViewController:BaseTableViewController,EmptyDataSetSource,EmptyDataSetDelegate {
     
     var page = 1
-    var modelArr = NSMutableArray()
+    var modelArr = [Any]()
     var didFinishRequest = false
     
     lazy var refreshBtnImg : UIImage = {
@@ -35,15 +35,15 @@ class LXTableViewController:BaseTableViewController,EmptyDataSetSource,EmptyData
     }
     
     ///page=1时刷新，page>1时加载更多
-    func configWithModels(models:NSMutableArray){
+    func configWithModels(models:[Any]){
         didFinishRequest = true
         if page == 1 {
-            modelArr.removeAllObjects()
-            modelArr.addObjects(from:models as! [Any])
+            modelArr.removeAll()
+            modelArr.append(models)
             tableView.reloadData()
             tableView.es.stopPullToRefresh()
         }else{
-            modelArr.addObjects(from:models as! [Any])
+            modelArr = modelArr + models
             tableView.reloadData()
             if models.count == 0 && modelArr.count != 0 {
                 tableView.es.stopLoadingMore()

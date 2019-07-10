@@ -26,7 +26,7 @@ class ExampleTableViewController: LXTableViewController {
     @objc private func loadMoreData() {
         let param = ["page":page,"size":10]
         NetworkTool.requestExampleData(param:param) {[weak self](models) in
-            self?.configWithModels(models:NSMutableArray(array:models))
+            self?.configWithModels(models:models)
         }
     }
     
